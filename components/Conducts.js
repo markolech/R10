@@ -16,11 +16,27 @@ const GET_CONDUCTS = gql`
 `;
 
 const Conducts = () => {
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#F5FCFF',
+    },
+    header2: {
+      fontSize: 16,
+      textAlign: 'center',
+      margin: 10,
+    },
+  });
+
   const { data, error, loading } = useQuery(GET_CONDUCTS);
+
   if (loading) {
     return (
       <View>
-          <Text>This is some stuff</Text>
+          <Text>Loading...</Text>
       </View>
     )
   };
@@ -30,9 +46,9 @@ const Conducts = () => {
     </View>
   };
 
-  console.log("About data: ", data.allConducts);
+  console.log("About data: ", data.allConducts[0].title);
 
-  let conductsComponents = data.allConducts.map(conducts => 
+  let conductsComponent = data.allConducts.map(conducts => 
     <Conduct
       key={conducts.id}
       description={conducts.description}
@@ -42,9 +58,9 @@ const Conducts = () => {
   )
 
   return (
-    <View>
-      <Text>Conducts</Text>
-        {conductsComponents}
+    <View style={styles.header2}>
+      <Text style={styles.header2}>Code of Conduct</Text>
+        {conductsComponent}
     </View>
   )
 }
