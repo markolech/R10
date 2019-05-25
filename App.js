@@ -8,10 +8,11 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-
 import apolloClient from './apolloClient';
 //import { ApolloProvider } from "react-apollo";
 import { ApolloProvider } from 'react-apollo-hooks';
+
+import About from './components/About';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -36,11 +37,12 @@ const instructions = Platform.select({
 function App() {   
   return (
     <ApolloProvider client={apolloClient}>
-      <View style={styles.container}>
+      {/* <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to R10</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+      </View> */}
+      <About />
     </ApolloProvider>
  )
 }
