@@ -34,12 +34,14 @@ const instructions = Platform.select({
 // }
 
 function App() {   
- return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>Welcome to R10</Text>
-      <Text style={styles.instructions}>To get started, edit App.js</Text>
-      <Text style={styles.instructions}>{instructions}</Text>
-    </View>
+  return (
+    <ApolloProvider client={apolloClient}>
+      <View style={styles.container}>
+        <Text style={styles.welcome}>Welcome to R10</Text>
+        <Text style={styles.instructions}>To get started, edit App.js</Text>
+        <Text style={styles.instructions}>{instructions}</Text>
+      </View>
+    </ApolloProvider>
  )
 }
 
