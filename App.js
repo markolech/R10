@@ -12,7 +12,8 @@ import apolloClient from './apolloClient';
 //import { ApolloProvider } from "react-apollo";
 import { ApolloProvider } from 'react-apollo-hooks';
 
-import About from './components/About';
+//import About from './components/About';
+import Conducts from './components/Conducts'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -42,7 +43,7 @@ function App() {
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
       </View> */}
-      <About />
+      <Conducts />
     </ApolloProvider>
  )
 }
