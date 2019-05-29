@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 import { useQuery } from 'react-apollo-hooks';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import Conduct from './Conduct';
+import Collapsible from 'react-native-collapsible';
 
 const GET_CONDUCTS = gql`
   {
@@ -25,10 +26,12 @@ const Conducts = () => {
       backgroundColor: '#F5FCFF',
     },
     header2: {
-      fontSize: 16,
-      textAlign: 'center',
-      margin: 10,
-    },
+      fontSize: 26,
+      textAlign: 'left',
+      margin: 15,
+      fontFamily: 'Montserrat-Regular',
+      color: '#000000'
+    }
   });
 
   const { data, error, loading } = useQuery(GET_CONDUCTS);
@@ -46,7 +49,7 @@ const Conducts = () => {
     </View>
   };
 
-  console.log("About data: ", data.allConducts[0].title);
+  //console.log("About data: ", data.allConducts[0].title);
 
   let conductsComponent = data.allConducts.map(conducts => 
     <Conduct
@@ -58,7 +61,7 @@ const Conducts = () => {
   )
 
   return (
-    <View style={styles.header2}>
+    <View>
       <Text style={styles.header2}>Code of Conduct</Text>
         {conductsComponent}
     </View>
