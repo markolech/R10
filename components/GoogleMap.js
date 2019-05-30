@@ -1,61 +1,30 @@
-// import React from 'react';
-// import {Platform, StyleSheet, Text, View} from 'react-native';
-// import MapView from 'react-native-maps';
-// //import { Marker } from 'react-native-maps';
-
-// const styles = StyleSheet.create({
-//   container: {
-//     ...StyleSheet.absoluteFillObject,
-//     height: '100%',
-//     width: '100%',
-//     justifyContent: 'flex-end',
-//     alignItems: 'center',
-//     flex: 1
-//   },
-//   map: {
-//     ...StyleSheet.absoluteFillObject
-//   },
-//  });
-
-//  43.643904
-
-// const GoogleMap = () => {
-//   return (
-//     <View style={styles.container}>
-//       <Text>This is map</Text>
-//       <MapView
-//         style={styles.map}
-//         initialRegion={{
-//           latitude: 43.643904,
-//           // longitude: -79.397785,
-//           latitudeDelta: 0.0922,
-//           longitudeDelta: 0.0421,
-//         }}
-//       />
-//       <MapView.Marker
-//         style={styles.mapview}
-//         coordinate={{latitude: 43.643904, longitude: -79.397785 }}
-//         title={"title"}
-//         description={"description"}
-//         image={require('../images/map_pin.png')}
-//       />
-//     </View>
-//   );
-// }
-
-// export default GoogleMap;
-
-
-// basic React import
 import React from 'react'
 import MapView from 'react-native-maps'
-// react-native imports
 import { Image } from 'react-native'
-// CSS & Style imports
 import r10 from '../images/map_pin.png'
 
+// const ScheduleStackNavigator = createStackNavigator({
+//   Schedule: {
+//     screen: Schedule,
+//     navigationOptions: ({ navigation }) => ({
+//       title: 'Schedule',
+//       headerBackTitle: null
+//     }),
+//   },
+//   SessionDetail: {
+//     screen: SessionDetail,
+//     navigationOptions: ({ navigation }) => ({
+//       title: 'Session',
+//     }),
+//   }
+// });
+
+// export default createAppContainer(ScheduleStackNavigator);
+
 const GoogleMap = props => {
+  
   return (
+    
     <MapView
       style={{ flex: 1 }}
       initialRegion={{

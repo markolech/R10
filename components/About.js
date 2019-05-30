@@ -1,5 +1,5 @@
 import React from 'react'
-import {Platform, StyleSheet, Text, View, ScrollView, Image} from 'react-native';
+import { StyleSheet, Text, ScrollView, Image} from 'react-native';
 import { Divider } from 'react-native-elements';
 import Conducts from './Conducts';
 
@@ -46,9 +46,6 @@ const About = () => {
 
   return (
     <ScrollView>
-      {/* R10 image goes here */}
-      {/* line break goes here */}
-      {/* <Text style={styles.header1}>R10</Text> */}
       <Image
           style={styles.headerImage}
           source={require('../images/r10_logo.png')}

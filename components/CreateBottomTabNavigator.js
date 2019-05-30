@@ -2,19 +2,26 @@
 // react-native-vector-icons/Ionicons otherwise.
 import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
-import About from './About';
-import Faves from './Faves';
-import Schedule from './Schedule';
-import GoogleMap from './GoogleMap';
+import { createBottomTabNavigator } from 'react-navigation';
 import ScheduleStackNavigator from './ScheduleStackNavigator';
+import MapStackNavigator from './MapStackNavigator';
+import FavesStackNavigator from './FavesStackNavigator';
+import AboutStackNavigator from './AboutStackNavigator';
 
 const CreateBottomTabNavigator = createBottomTabNavigator(
   {
-    Schedule: { screen: ScheduleStackNavigator },
-    Map: GoogleMap,
-    Faves: Faves,
-    About: About,
+    Schedule: { 
+      screen: ScheduleStackNavigator,
+    },
+    Map: { 
+      screen: MapStackNavigator,
+    },
+    Faves: {
+      screen: FavesStackNavigator,
+    },
+    About: {
+      screen: AboutStackNavigator,
+    }
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({

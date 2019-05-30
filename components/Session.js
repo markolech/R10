@@ -52,8 +52,6 @@ const Session = (props) => {
   
   return (
     <View>
-      {/* <Text>Session</Text> */}
-      {/* <Text>Description: {props.description}</Text> */}
       <View style={styles.timeContainer}>
         <Text style={styles.timeText}>{hour}:00 PM</Text>
       </View>
