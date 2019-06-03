@@ -4,10 +4,14 @@ import Sessions from './Sessions';
 
 const Schedule = (props) => {
 
+
   return (
     <ScrollView>
       {/* <Text>Schedule</Text> */}
-      <Sessions {...props} />
+      <Sessions 
+        scheduleShow={true}
+        {...props}
+      />
     </ScrollView>
   )
 }

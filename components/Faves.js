@@ -1,11 +1,16 @@
 import React from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import { ScrollView } from 'react-native';
+import Sessions from './Sessions';
 
-const Faves = () => {
+
+const Faves = (props) => {
+
   return (
-    <View>
-      <Text>Faves</Text>
-    </View>
+    <ScrollView>
+      <Sessions 
+      favesShow = {true}
+      {...props} />
+    </ScrollView>
   )
 }
 
