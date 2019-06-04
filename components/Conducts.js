@@ -18,22 +18,6 @@ const GET_CONDUCTS = gql`
 
 const Conducts = () => {
 
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#F5FCFF',
-    },
-    header2: {
-      fontSize: 26,
-      textAlign: 'left',
-      margin: 15,
-      fontFamily: 'Montserrat-Regular',
-      color: '#000000'
-    }
-  });
-
   const { data, error, loading } = useQuery(GET_CONDUCTS);
 
   if (loading) {

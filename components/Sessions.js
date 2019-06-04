@@ -3,6 +3,8 @@ import gql from 'graphql-tag';
 import { useQuery } from 'react-apollo-hooks';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import Session from './Session';
+import { nest } from 'd3-collection';
+
 
 const GET_SESSIONS = gql`
   {
@@ -33,7 +35,11 @@ const Sessions = (props) => {
     </View>
   };
   
-  //console.log('allsessions data: ', data.allSessions);
+  const groupedData = nest()
+  .key(el => el.startTime)
+  .entries(data.allSessions)
+
+  console.log(groupedData);
 
   let sessionsComponent = data.allSessions.map(session => 
     <Session 
@@ -52,6 +58,17 @@ const Sessions = (props) => {
       {sessionsComponent}
     </View>
   )
-}
+  }
+  export default Sessions
 
-export default Sessions;
+  /* //     {groupedData.map(x => 
+  //       <View>
+  //         <Text>{x.key}</Text>
+  //       {
+  //           sessionsComponent = x.values.map(y => 
+  //             <Text>{y.description}</Text>
+  //           )
+  //       }
+  //       </View>
+  //       )*/
+

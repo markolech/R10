@@ -4,6 +4,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { Divider } from 'react-native-elements';
 import AsyncStorage from '@react-native-community/async-storage';
 import moment from 'moment';
+import styles from './styles/styles.js';
+
 // import 
 
 // // const nestedData = nest()
@@ -13,47 +15,6 @@ import moment from 'moment';
 const Session = (props) => {
 
   const [fav, setFav] = useState(false);
-
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#F5FCFF',
-      marginTop: 50
-    },
-    timeContainer: {
-      backgroundColor: '#E6E6E6'
-    },
-    titleText: {
-      margin: 15,
-      fontFamily: 'Montserrat-Regular',
-      fontSize: 19
-    },
-    timeText: {
-      marginTop: 10,
-      marginRight: 15,
-      marginBottom: 10,
-      marginLeft: 15,
-      fontFamily: 'Montserrat-Regular',
-      fontSize: 19,
-      color: 'black',
-    },
-    locationText: {
-      color: '#939393',
-      fontSize: 18,
-      fontFamily: 'Montserrat-Regular',
-      color: '#999999',
-      marginTop: 0,
-      marginRight: 15,
-      marginBottom: 15,
-      marginLeft: 15
-    },
-    heartIcon: {
-      color: "black",
-      alignItems: 'flex-end'
-    }
-  });
 
   checkData = async (id) => {
     let matchCheck;
@@ -80,8 +41,9 @@ const Session = (props) => {
   let hour = moment(props.startTime);
   hour = hour.format('h');
   
-  // console.log('in schedule: ', props.scheduleShow)
-  //console.log('in faves', props.favesShow)
+  //console.log('in schedule: ', props.scheduleShow)
+  // console.log('in faves', props.favesShow)
+  // console.log('fav: ', fav)
   
   return (
       <View>
@@ -93,13 +55,14 @@ const Session = (props) => {
           <TouchableOpacity onPress={() => props.navigation.navigate('SessionDetail', { id: props.id })}>
             <Text style={styles.titleText}>{props.title}</Text> 
           </TouchableOpacity>
-          <Text style={styles.locationText}>{props.location}
-            {
-              fav
-              ? <Icon style={styles.heartIcon} name="ios-heart" size={23}></Icon>
-              : <Icon style={styles.heartIcon} name="ios-heart-empty" size={23}></Icon>
-            }
-          </Text>
+          <View style={styles.locationContainer}>
+            <Text style={styles.locationText}> {props.location} </Text>
+                {
+                fav
+                ? <Text><Icon style={styles.heartIcon} name="ios-heart" size={23}></Icon></Text>
+                : <Text><Icon style={styles.heartIcon} name="ios-heart-empty" size={23}></Icon></Text>
+              }
+          </View>
           <Text>
           </Text>
           <Divider style={{ backgroundColor: '#E6E6E6' }} />
@@ -114,14 +77,15 @@ const Session = (props) => {
             </View>
             <TouchableOpacity onPress={() => props.navigation.navigate('SessionDetail', { id: props.id })}>
               <Text style={styles.titleText}>{props.title}</Text> 
-            </TouchableOpacity>
-            <Text style={styles.locationText}>{props.location}
+            </TouchableOpacity> 
+            <View style={styles.locationContainer}>
+              <Text style={styles.locationText}> {props.location} </Text>
               {
                 fav
-                ? <Icon style={styles.heartIcon} name="ios-heart" size={23}></Icon>
-                : <Icon style={styles.heartIcon} name="ios-heart-empty" size={23}></Icon>
+                ? <Text><Icon style={styles.heartIcon} name="ios-heart" size={23}></Icon></Text>
+                : <Text><Icon style={styles.heartIcon} name="ios-heart-empty" size={23}></Icon></Text>
               }
-            </Text>
+            </View>
             <Text>
               {/* Is this a fave? {isFave} */}
             </Text>
