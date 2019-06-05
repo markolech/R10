@@ -61,9 +61,6 @@ const styles = StyleSheet.create({
     margin: 10,
     color: '#916ae3'
   },
-  content: {
-    margin: 10,
-  },
   headerText: {
     fontSize: 18,
     fontFamily: 'Montserrat-Regular',
@@ -109,6 +106,25 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginRight: 15
+  },
+  lightBoxContainer: {
+    flex:1, 
+    marginBottom: 100, 
+    flexDirection: 'column'
+  },
+  imageCircleCenterContainer: {
+    flex: 1,
+    marginTop: 200,
+    backgroundColor: 'white',
+    flex: 1,
+    alignItems: 'center',
+    display: 'flex'
+  },
+  r10Image: {
+    marginTop: 30,
+    flex: 1,
+    alignItems: 'center',
+    display: 'flex'
   },
   heartIcon: {
     color: "red",
@@ -202,8 +218,20 @@ const styles = StyleSheet.create({
     marginLeft: 50,
     marginRight: 50,
     marginTop: 20,
-    marginBottom: 20
-  }
+    marginBottom: 20,
+    borderRadius: 50,
+  },
+  buttonTitle: {
+    fontSize: 20,
+    fontFamily: 'Montserrat-Regular'
+  },
+  presenterImageCenter: {
+    width: 125,
+    height: 125,
+    marginTop: 40,
+    borderRadius: 50
+  }  
+  
 });
 
 export default styles;

@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, ScrollView, Image} from 'react-native';
+import { StyleSheet, Text, ScrollView, Image, View} from 'react-native';
 import { Divider } from 'react-native-elements';
 import Conducts from './Conducts';
 import styles from './styles/styles'
@@ -8,10 +8,12 @@ const About = () => {
 
   return (
     <ScrollView>
-      <Image
-          style={styles.headerImage}
-          source={require('../images/r10_logo.png')}
-      />
+      <View style={styles.r10Image}>
+        <Image
+            style={styles.headerImage}
+            source={require('../images/r10_logo.png')}
+        />
+      </View>
       <Divider style={styles.divider} />
       <Text style={styles.content}>R10 is a conference that focuses on just about any topic related to dev.</Text>
       <Text style={styles.header2}>Date & Venue</Text>

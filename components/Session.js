@@ -39,7 +39,7 @@ const Session = (props) => {
   checkData(props.id);
 
   let hour = moment(props.startTime);
-  hour = hour.format('h');
+  hour = hour.format('h:mm a');
   
   //console.log('in schedule: ', props.scheduleShow)
   // console.log('in faves', props.favesShow)
@@ -50,7 +50,7 @@ const Session = (props) => {
       { (props.favesShow && fav)
       ?  <View>
           <View style={styles.timeContainer}>
-            <Text style={styles.timeText}>{hour}:00 PM</Text>
+            <Text style={styles.timeText}>{hour}</Text>
           </View>
           <TouchableOpacity onPress={() => props.navigation.navigate('SessionDetail', { id: props.id })}>
             <Text style={styles.titleText}>{props.title}</Text> 
@@ -73,7 +73,7 @@ const Session = (props) => {
         (props.scheduleShow)
         ? <View>
             <View style={styles.timeContainer}>
-              <Text style={styles.timeText}>{hour}:00 PM</Text>
+              <Text style={styles.timeText}>{hour}</Text>
             </View>
             <TouchableOpacity onPress={() => props.navigation.navigate('SessionDetail', { id: props.id })}>
               <Text style={styles.titleText}>{props.title}</Text> 

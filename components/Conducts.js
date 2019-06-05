@@ -4,6 +4,7 @@ import { useQuery } from 'react-apollo-hooks';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import Conduct from './Conduct';
 import Collapsible from 'react-native-collapsible';
+import styles from './styles/styles';
 
 const GET_CONDUCTS = gql`
   {
